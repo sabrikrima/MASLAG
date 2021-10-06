@@ -5,6 +5,13 @@
  */
 package maslag.project;
 
+import Entité.Produit;
+import connexion.MaConnexion;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import service.ProduitService;
+
 /**
  *
  * @author lenovo
@@ -14,8 +21,26 @@ public class MASLAGProject {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    public static void main(String[] args) throws SQLException {
+        List<Produit> Produit = new ArrayList<>();
+        
+        MaConnexion mc = MaConnexion.getInstance() ; 
+        Produit p1 = new Produit(1,"valvo","smn","xtx",4);
+        Produit p2 = new Produit(2,"valvo","smn","xtx",4);
+        Produit p3 = new Produit(3,"valvo","smn","xtx",4);
+        Produit p4 = new Produit(4,"valvo","smn","xtx",4);
+        ProduitService ps = new ProduitService();
+        ps.ajouterProduit(p1);
+        ps.ajouterProduit(p2);
+        ps.ajouterProduit(p3);
+        ps.ajouterProduit(p4);
+        
+        
+        ps.modifierProduit();
+        ps.afficherProduit();
+        ps.supprimerProduit();
+    }   
+
+    
     
 }
