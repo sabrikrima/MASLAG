@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author lenovo
  */
 public class MaConnexion {
-    public String URL="jdbc:mysql://localhost:3306/esprit";
+    public String URL="jdbc:mysql://localhost:3306/maslag-db";
     public String User ="root";
     public String Password ="";
     Connection cnx;
