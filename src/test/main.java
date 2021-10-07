@@ -6,7 +6,7 @@
 package test;
 import Entité.User;
 import connexion.MaConnexion;
-import maslag.project.Personne;
+import service.CommandService;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
