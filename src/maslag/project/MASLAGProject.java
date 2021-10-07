@@ -39,20 +39,20 @@ public class MASLAGProject {
       
        
         CommandService Com = new CommandService();
-    /*   Com.AjouterCommand(c1);
-       Com.AjouterCommand(c2);
-      Com.Modifiercommand();
-      Com.supprimercommand();
-      */
+      //Com.AjouterCommand();
        
+      
+       Com.Modifiercommand();
               
-        Com.AjouterCommand();
-
+       // Com.AjouterCommand();
+      // Com.supprimercommand();
         
         
+          
        
         
         
-    }
     
+    
+}
 }

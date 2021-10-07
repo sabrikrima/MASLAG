@@ -36,11 +36,11 @@ public class CommandService {
       System.out.println("entrer Prix_Produit");
       Scanner sc3 = new Scanner(System.in);
       double f = sc3.nextDouble();
-      
-      
-       System.out.println("entrer Date_com");
+      System.out.println("entrer Date_com");
       Scanner sc7 = new Scanner(System.in);
       String H = sc7.nextLine();
+      
+      
       
      
       command c = new command(a, b, d, f, H);
@@ -57,18 +57,28 @@ public class CommandService {
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
 }}
-  
+  //
     public void Modifiercommand()  {
+        
+        System.out.println("entrer id_com a modifier: ");
+        Scanner sc = new Scanner(System.in);
+        String b = sc.nextLine();
       try {
       String sql = "update command set Id_Com = '11' where Id =1";
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
-}}
+
+  }}
     
       public void supprimercommand()  {
+          
       try {
-      String sql = "delete from command where Id=2 ";
+          System.out.println("entrer id que vous voulez le supprimer : ");
+          Scanner Sup =new Scanner (System.in);
+          int f = Sup.nextInt();
+          
+      String sql = "delete from command where Id_Com=2 ";
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
