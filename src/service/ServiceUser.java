@@ -62,7 +62,7 @@ public class ServiceUser {
      
       ste.executeUpdate();
       
-      System.out.println("User a Ajouter aves succeé");
+      System.out.println("******* User a Ajouter aves succeé *******");
   }catch (SQLException ex) { System.out.println(ex);
 }}
   
@@ -76,6 +76,34 @@ public class ServiceUser {
       try {
      // String sql = "update user set Nom_User ="+b+"where Id_User ="+a;
      String sql = "UPDATE `user` SET `Nom_User` ='"+b+"' WHERE `user`.`Id_User` ="+a;
+      ste=cnx.prepareStatement(sql);
+      ste.executeUpdate();
+  }catch (SQLException ex) { System.out.println(ex);
+}}
+    public void modifierUser_Prenom()  {
+        System.out.println("entre Id de user a Modifier");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        System.out.println("entre le Prenom a Modifier");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
+      try {
+     // String sql = "update user set Nom_User ="+b+"where Id_User ="+a;
+     String sql = "UPDATE `user` SET `Prenom_User` ='"+b+"' WHERE `user`.`Id_User` ="+a;
+      ste=cnx.prepareStatement(sql);
+      ste.executeUpdate();
+  }catch (SQLException ex) { System.out.println(ex);
+}}
+    public void modifierUser_Cin()  {
+        System.out.println("entre Id de user a Modifier");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        System.out.println("entre le Cin a Modifier");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
+      try {
+     // String sql = "update user set Nom_User ="+b+"where Id_User ="+a;
+     String sql = "UPDATE `user` SET `Cin_User` ='"+b+"' WHERE `user`.`Id_User` ="+a;
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
@@ -100,6 +128,33 @@ public void afficherUser() throws SQLException
         try {
 
 String sql = "Select * from user ";
+ResultSet rs;
+ste=cnx.prepareStatement(sql);
+rs = ste.executeQuery();
+
+while (rs.next()){
+    User u = new User ();
+    u.setId_User(rs.getInt(1));
+   u.setNom_User(rs.getString(2));
+    u.setPrenom_User(rs.getString(3));
+    u.setCin_User(rs.getInt(4));
+   u.setNum_User(rs.getInt(5));
+    u.setAdresse_User(rs.getString(6));
+     u.setDate_N_User(rs.getDate(7));
+    Users.add(u);
+}}
+catch (SQLException ex) {Logger.getLogger(PersonneService.class.getName()).log(Level.SEVERE, null, ex);
+
+}System.out.println(Users);
+}
+public void CercheerUser() throws SQLException 
+{ System.out.println("entre l Id de User a Chercher");
+        Scanner sc5 = new Scanner(System.in);
+        String f = sc5.nextLine();
+    List<User> Users = new ArrayList<>();
+        try {
+
+String sql = "Select * from user WHERE `user`.`Id_User` ="+f;
 ResultSet rs;
 ste=cnx.prepareStatement(sql);
 rs = ste.executeQuery();
