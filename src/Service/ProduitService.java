@@ -23,7 +23,7 @@ public class ProduitService {
     public ProduitService() {
     cnx = MaConnexion.getInstance().getconnection();
 }
-  public void ajouterProduit(Produit p)  {
+  /*public void ajouterProduit(Produit p)  {
       try {
       String sql = "insert into produit (Id_Produit,Nom_Produit,Marque_Produit,Categorie_Produit,Prix_Produit)" + "values(?,?,?,?,?)";
       ste=cnx.prepareStatement(sql);
@@ -34,8 +34,38 @@ public class ProduitService {
       ste.setDouble(5, p.getPrix_Produit());
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
+}}*/
+  public void ajouterProduit()  {
+         
+         System.out.println("Id");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println("Nom");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
+        System.out.println("Marque");
+        Scanner sc2 = new Scanner(System.in);
+        String c = sc2.nextLine();
+        System.out.println("Categorie");
+        Scanner sc3 = new Scanner(System.in);
+        String d = sc3.nextLine();
+        System.out.println("Prix");
+        Scanner sc4 = new Scanner(System.in);
+        double e = sc4.nextDouble();
+        System.out.println("Adresse");
+        
+        Produit p = new Produit(a,b,c,d,e);
+       try {
+      String sql = "insert into produit (Id_Produit,Nom_Produit,Marque_Produit,Categorie_Produit,Prix_Produit)" + "values(?,?,?,?,?)";
+      ste=cnx.prepareStatement(sql);
+      ste.setInt(1, p.getId_Produit());
+      ste.setString(2, p.getNom_Produit());
+      ste.setString(3, p.getMarque_Produit());
+      ste.setString(4, p.getCategorie_Produit());
+      ste.setDouble(5, p.getPrix_Produit());
+      ste.executeUpdate();
+  }catch (SQLException ex) { System.out.println(ex);
 }}
-  
     public void modifierProduit()  {
       try {
       String sql = "update produit set Nom_Produit = 'tn' where Id_Produit =1";
@@ -75,4 +105,6 @@ catch (SQLException ex) {Logger.getLogger(ProduitService.class.getName()).log(Le
 
 }System.out.println(pr);
 }
+
+    
 }

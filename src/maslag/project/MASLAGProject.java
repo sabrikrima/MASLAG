@@ -29,11 +29,11 @@ public class MASLAGProject {
         Produit p2 = new Produit(2,"valvo","smn","xtx",4);
         Produit p3 = new Produit(3,"valvo","smn","xtx",4);
         Produit p4 = new Produit(4,"valvo","smn","xtx",4);
+        Produit p5 = new Produit(5,"valvo","smn","xtx",4);
         ProduitService ps = new ProduitService();
-        ps.ajouterProduit(p1);
-        ps.ajouterProduit(p2);
-        ps.ajouterProduit(p3);
-        ps.ajouterProduit(p4);
+        
+        ps.ajouterProduit();
+        
         
         
         ps.modifierProduit();
