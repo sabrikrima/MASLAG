@@ -26,7 +26,29 @@ public class ServiceUser {
     public ServiceUser() {
     cnx = MaConnexion.getInstance().getconnection();
 }
-     public void ajouterUser(User u)  {
+     public void ajouterUser()  {
+         
+         System.out.println("entre Id");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println("entre Nom");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
+        System.out.println("entre Prenom");
+        Scanner sc2 = new Scanner(System.in);
+        String c = sc2.nextLine();
+        System.out.println("entre Cin");
+        Scanner sc3 = new Scanner(System.in);
+        int d = sc3.nextInt();
+        System.out.println("entre Num");
+        Scanner sc4 = new Scanner(System.in);
+        int e = sc4.nextInt();
+        System.out.println("entre Adresse");
+        Scanner sc5 = new Scanner(System.in);
+        String f = sc5.nextLine();
+       int jj=31 ; int yy=1998 ; int mm=8;
+        Date dd = new Date(yy-1900,mm-1,yy);
+        User u = new User(a,b,c,d,e,f,dd);
       try {
       String sql = "insert into user (Id_User,Nom_User,Prenom_User,Cin_User,Num_User,Adresse_User,Date_N_User)" + "values(?,?,?,?,?,?,?)";
       ste=cnx.prepareStatement(sql);
@@ -39,22 +61,36 @@ public class ServiceUser {
       ste.setDate(7, u.getDate_N_User());
      
       ste.executeUpdate();
+      
+      System.out.println("User a Ajouter aves succeé");
   }catch (SQLException ex) { System.out.println(ex);
 }}
   
-    public void modifierPersonne()  {
+    public void modifierUser_Nom()  {
+        System.out.println("entre Id de user a Modifier");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        System.out.println("entre le Nom a Modifier");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
       try {
-      String sql = "update 4se2 set Nom = 'sabriiii' where Id =1";
+     // String sql = "update user set Nom_User ="+b+"where Id_User ="+a;
+     String sql = "UPDATE `user` SET `Nom_User` ='"+b+"' WHERE `user`.`Id_User` ="+a;
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
 }}
     
-      public void supprimerPersonne()  {
-      try {
-      String sql = "delete from 4se2 where Id=2 ";
+      public void supprimerUser()  {
+        try {          System.out.println("entre l Id de User a supprimer");
+        Scanner sc5 = new Scanner(System.in);
+        String f = sc5.nextLine();
+      
+      String sql = "delete from user where Id_User="+f;
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
+      
+      System.out.println("User a supprimer aves succeé");
   }catch (SQLException ex) { System.out.println(ex);
 }}
  
