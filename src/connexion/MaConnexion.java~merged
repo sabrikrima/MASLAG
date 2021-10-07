@@ -1,8 +1,11 @@
+<<<<<<< HEAD
+=======
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+>>>>>>> aa5cc4b9e802df09958c72117689d8c4f042c93a
 package connexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,18 +16,22 @@ import java.sql.SQLException;
  * @author lenovo
  */
 public class MaConnexion {
+<<<<<<< HEAD
     public String URL="jdbc:mysql://localhost:3306/maslag_db";
+=======
+    public String URL="jdbc:mysql://localhost:3306/maslag-db";
+>>>>>>> aa5cc4b9e802df09958c72117689d8c4f042c93a
     public String User ="root";
     public String Password ="";
     Connection cnx;
 public static MaConnexion ct;
     public MaConnexion() {
         try {
-        cnx = DriverManager.getConnection(URL,User,Password);
+        cnx = DriverManager.getConnection(URL, User,Password);
         System.out.println("connexion etablie)");
         }catch (SQLException ex) {
             System.out.println(ex.getMessage());
-             System.out.println("connexion échouer");
+             System.out.println("aaaa");
     }
         
 }
@@ -42,3 +49,4 @@ public static MaConnexion getInstance(){
 }
     }
     
+
