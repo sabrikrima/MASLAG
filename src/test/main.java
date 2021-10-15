@@ -28,6 +28,25 @@ public class main {
         MaConnexion mc = MaConnexion.getInstance() ; 
               ServiceUser us = new ServiceUser();
               
+ while(true){      
+     //ServiceUser us = new ServiceUser();
+   System.out.println("entre 1 pour ajouter User || 2 pour afficher Users  || 3 pour supprimer User ||  4 pour modifier user || 5 pour chercher || 6 pour exit");
+        Scanner sc5 = new Scanner(System.in);
+        int x = sc5.nextInt();
+        if (x==1){   us.ajouterUser();}
+        if (x==2){   us.afficherUser();}
+        if (x==3){   us.supprimerUser();}
+        if (x==4){System.out.println("entre 1 pour modifier nom || 2 pour modifier Prenom   || 3 pour modifier CIN");
+        Scanner sc88 = new Scanner(System.in);
+        int y = sc88.nextInt();
+        if (y==1){   us.modifierUser_Nom();}
+        if (y==2){   us.modifierUser_Prenom();}
+        if (y==3){   us.modifierUser_Cin();}}
+        if (x==5){   us.CercheerUser();}
+        if (x==6){   break;}
+ 
+ }}
+    }   
 //          us.afficherUser();
 //          us.modifierUser_Nom();  
               
@@ -61,29 +80,6 @@ public class main {
 //        
 //      String sql = "delete from user where Id="+f;
 //      System.out.println(sql);
-
-
-
- while(true){      
-     //ServiceUser us = new ServiceUser();
-   System.out.println("entre 1 pour ajouter User || 2 pour afficher Users  || 3 pour supprimer User ||  4 pour modifier user || 5 pour chercher || 6 pour exit");
-        Scanner sc5 = new Scanner(System.in);
-        int x = sc5.nextInt();
-        if (x==1){   us.ajouterUser();}
-        if (x==2){   us.afficherUser();}
-        if (x==3){   us.supprimerUser();}
-        if (x==4){System.out.println("entre 1 pour modifier nom || 2 pour modifier Prenom   || 3 pour modifier CIN");
-        Scanner sc88 = new Scanner(System.in);
-        int y = sc88.nextInt();
-        if (y==1){   us.modifierUser_Nom();}
-        if (y==2){   us.modifierUser_Prenom();}
-        if (y==3){   us.modifierUser_Cin();}}
-        if (x==5){   us.CercheerUser();}
-        if (x==6){   break;}
- 
- }}
-    }   
-
     
     
 
