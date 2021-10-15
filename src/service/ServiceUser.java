@@ -170,7 +170,7 @@ while (rs.next()){
      u.setDate_N_User(rs.getDate(7));
     Users.add(u);
 }}
-catch (SQLException ex) {Logger.getLogger(PersonneService.class.getName()).log(Level.SEVERE, null, ex);
+catch (SQLException ex) {Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
 
 }System.out.println(Users);
 }
