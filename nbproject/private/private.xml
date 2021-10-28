@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/guii/ClienProduuit.fxml</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/guii/ClienProduuitController.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/Service/ProduitService.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/Entité/Produit.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/guii/NewFXMain.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/maslag/project/MASLAGProject.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/guii/AjouterProduitController.java</file>
+            <file>file:/C:/Users/ahmed/OneDrive/Bureau/MASLAG/src/guii/style.css</file>
+        </group>
+    </open-files>
 </project-private>
