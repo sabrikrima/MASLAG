@@ -1,0 +1,24 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#ClientE{
+     -fx-background-color:#1E2329;
+}
+#ValiderE{
+ -fx-background-color:#F0B90B;   
+}
+#ValiderE:hover{
+    -fx-border-color:#FDDE4B;
+}
+
+#inputR{
+   
+    -fx-background-color:#2B3139;
+}
+#inputR:hover{
+     -fx-border-color:#f0b90b;
+}
+#inputR{
+    -fx-text-inner-color:#ffffff;
+}
