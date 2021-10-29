@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="backendFPdf" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxProjectMaslagVente.FXMLVenteController">
+    <stylesheets>
+        <URL value="@../Documents/NetBeansProjects/MASLAGg/src/JavaFxVenteProduit/fxmlvente.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="14.0" layoutY="49.0" prefHeight="700.0" prefWidth="900.0" styleClass="pannel1P1" stylesheets="@fxmlvente.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="602.0" prefWidth="294.0" styleClass="pannel2p1" stylesheets="@fxmlvente.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="292.0" />
+                  <VBox fx:id="chosirProduitVente" alignment="CENTER" prefHeight="418.0" prefWidth="294.0" stylesheets="@fxmlvente.css">
+                     <children>
+                        <HBox prefHeight="50.0" prefWidth="294.0" stylesheets="@fxmlvente.css">
+                           <children>
+                              <TextField fx:id="searchInputV" onAction="#searchInputV" prefHeight="50.0" prefWidth="188.0" promptText="Type here to search" styleClass="transparent" stylesheets="@fxmlvente.css">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button fx:id="searchButtonPV" mnemonicParsing="false" onAction="#searchButtonPV" prefHeight="50.0" prefWidth="100.0" styleClass="search-button" stylesheets="@fxmlvente.css" text="Search" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="50.0" top="50.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="search-box" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <ComboBox fx:id="comboBoxVenteQte" onDragDetected="#comboBoxVenteQte" prefWidth="150.0" />
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                           <children>
+                              <Separator prefHeight="0.0" prefWidth="118.0" style="-fx-background-color: #fdee48;" />
+                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="/" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefHeight="0.0" prefWidth="118.0" style="-fx-background-color: #fdee48;" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="btnAjouterPannierV" mnemonicParsing="false" onAction="#AjouterPannierV" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@fxmlvente.css" text="AJOUTER AU PANNIER" textFill="#828282">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="50.0" top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="chosen-Produit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets top="70.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox prefHeight="173.0" prefWidth="294.0" stylesheets="@fxmlvente.css" />
+                  <Button fx:id="ConfirmerButtonV" mnemonicParsing="false" onAction="#ConfirmerButtonV" prefHeight="40.0" prefWidth="293.0" styleClass="add-btn" stylesheets="@fxmlvente.css" text="RETURNE" textFill="#828282">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="719.0" prefWidth="638.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tableViewPv" onMouseClicked="#mousebtn_panier_v" prefHeight="397.0" prefWidth="547.0" style="-fx-background-color: #ffffff;" stylesheets="@fxmlvente.css">
+                    <columns>
+                      <TableColumn fx:id="colNproduitV" prefWidth="80.00000762939453" text="Produit" />
+                        <TableColumn fx:id="colMarquePv" prefWidth="78.4000244140625" text="Marque" />
+                        <TableColumn fx:id="colCategoriePv" prefWidth="92.800048828125" text="Categorie" />
+                        <TableColumn fx:id="colpricePV" prefWidth="108.80001831054688" text="Prix Unitaire" />
+                        <TableColumn fx:id="colquantitéPv" prefWidth="108.7999267578125" text="Quantite" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets right="158.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="60.0" />
+                     </padding>
+                  </TableView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets top="110.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

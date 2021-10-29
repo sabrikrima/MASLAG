@@ -23,62 +23,86 @@ public class CommandService {
     public CommandService() {
     cnx = MaConnexion.getInstance().getconnection();
 }
-  public void AjouterCommand()  {
-      System.out.println("entrer Id_com");
-      Scanner sc = new Scanner(System.in);
-      int a = sc.nextInt();
-      System.out.println("entrer Id_Produit");
-      Scanner sc1 = new Scanner(System.in);
-      int b = sc1.nextInt();
-      System.out.println("entrer Id_User");
-      Scanner sc2 = new Scanner(System.in);
-      int d = sc2.nextInt();
-      System.out.println("entrer Prix_Produit");
-      Scanner sc3 = new Scanner(System.in);
-      double f = sc3.nextDouble();
-      System.out.println("entrer Date_com");
-      Scanner sc7 = new Scanner(System.in);
-      String H = sc7.nextLine();
+  public void AjouterCommand(command c)  {
+   /*   private int id_Produit;
+    private String Nom_Produit;
+    private String Marque_Produit;
+    private String Categorie_Produit;
+    private Double Prix_Produit;
+    private int quantite;*/
+   
       
-      
-      
-     
-      command c = new command(a, b, d, f, H);
       try {
-      String sql = "insert into command (Id_Com ,Id_Produit ,Id_User, Prix_Produit,  Date_com)" + "values(?,?,?,?,?)";
+      String sql = "INSERT INTO `command`(`Id_Com`, `Id_Produit`, `Id_User`, `Prix_Produit`, `Date_Com`, `quantite`, `Categorie_Produit`, `Marque_Produit`, `Nom_Produit`)" + "values(?,?,?,?,?,?,?,?,?)";
       ste=cnx.prepareStatement(sql);
      //  ste.setInt(1,p.getId());
-     ste.setInt(1, c.getId_Com() );
+     
+     ste.setInt(1,c.getId_Com());
      ste.setInt(2,c.getId_Produit());
      ste.setInt(3,c.getId_User());
-      ste.setDouble(4, c.getPrix_Produit());
-       ste.setString(5, c.getDate_com());
+     ste.setDouble(4,c.getPrix_Produit());
+     ste.setString(5,c.getDate_Com());
+     ste.setInt(6,c.getQuantite());
+       ste.setString(7,c.getCategorie_Produit());
+           
+                         
+              ste.setString(8,c.getMarque_Produit());
+              ste.setString(9,c.getNom_Produit());
+
+              
+
+          
+     
      
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
-}}
+}
+      
+ }
   //
     public void Modifiercommand()  {
         
-        System.out.println("entrer id_com a modifier: ");
+        System.out.println("entre Id de comm a Modifier");
         Scanner sc = new Scanner(System.in);
-        String b = sc.nextLine();
+        String a = sc.nextLine();
+        System.out.println("entre l id_Produit a Modifier");
+        Scanner sc1 = new Scanner(System.in);
+        String b = sc1.nextLine();
+       System.out.println("entrer Id_User a Modifier");
+      Scanner sc2 = new Scanner(System.in);
+      int d = sc2.nextInt();
+      System.out.println("entrer Prix_Produit a Modifier");
+      Scanner sc3 = new Scanner(System.in);
+      double f = sc3.nextDouble();
+      System.out.println("entrer Date_com a Modifier");
+      Scanner sc7 = new Scanner(System.in);
+      String H = sc7.nextLine();
       try {
-      String sql = "update command set Id_Com = '11' where Id =1";
+     
+     String sql = "UPDATE `command` SET `Id_Produit` ='"+b+"' WHERE `command`.`Id_Com` ="+a;
+      ste=cnx.prepareStatement(sql);
+      ste.executeUpdate();
+           sql = "UPDATE `command` SET `Id_User` ='"+d+"' WHERE `command`.`Id_Com` ="+a;
+      ste=cnx.prepareStatement(sql);
+      ste.executeUpdate();
+          sql = "UPDATE `command` SET `Prix_Produit` ='"+f+"' WHERE `command`.`Id_Com` ="+a;
+      ste=cnx.prepareStatement(sql);
+      ste.executeUpdate();
+           sql = "UPDATE `command` SET `Date_com` ='"+H+"' WHERE `command`.`Id_Com` ="+a;
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
-
-  }}
+  
+}}
     
-      public void supprimercommand()  {
+     public void supprimercommand()  {
           
       try {
           System.out.println("entrer id que vous voulez le supprimer : ");
           Scanner Sup =new Scanner (System.in);
           int f = Sup.nextInt();
           
-      String sql = "delete from command where Id_Com=2 ";
+      String sql = "DELETE FROM `command` WHERE `Id_Com`="+f;
       ste=cnx.prepareStatement(sql);
       ste.executeUpdate();
   }catch (SQLException ex) { System.out.println(ex);
@@ -101,7 +125,7 @@ while (rs.next()){
    c.setId_Produit(rs.getInt(2));
      c.setId_User(rs.getInt(3));
        c.setPrix_Produit(rs.getDouble(4));
-         c.setDate_com(rs.getString(5));
+ 
     commands.add(c);
 }}
 catch (SQLException ex) {Logger.getLogger(CommandService.class.getName()).log(Level.SEVERE, null, ex);

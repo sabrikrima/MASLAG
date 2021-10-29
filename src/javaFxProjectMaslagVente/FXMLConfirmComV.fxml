@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxProjectMaslagVente.FXMLConfirmComVController">
+    <stylesheets>
+        <URL value="@fxmlconfirmcomv.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="btn_payement" layoutX="285.0" layoutY="450.0" mnemonicParsing="false" onAction="#payementPv" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@fxmlvente.css" text="PAYMENT" textFill="#828282">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="334.0" prefHeight="45.0" prefWidth="200.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="118.0" style="-fx-background-color: #f0b90b;" />
+            <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="/" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="24.0" />
+               </font>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="118.0" style="-fx-background-color: #f0b90b;" />
+         </children>
+      </HBox>
+      <Label fx:id="total_prix_avant_remise" layoutX="306.0" layoutY="235.0" prefHeight="54.0" prefWidth="206.0" text="PRIX TTC : " textFill="#f0b90b">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label fx:id="prixTotalQt_V" layoutX="297.0" layoutY="380.0" prefHeight="54.0" prefWidth="206.0" text="PRIX A PAYER : " textFill="#f0b90b">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="remise" layoutX="306.0" layoutY="289.0" prefHeight="54.0" prefWidth="206.0" text="REMISE :    5%" textFill="#f0b90b">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView3" layoutX="306.0" layoutY="14.0" prefHeight="211.0" prefWidth="229.0">
+        <columns>
+          <TableColumn fx:id="colNproduitV" prefWidth="75.0" text="Produit" />
+          <TableColumn fx:id="colpricePV" prefWidth="75.0" text="Prix Unitaire" />
+            <TableColumn fx:id="colquantitéPv" prefWidth="75.0" text="Quantite" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="-2.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../iconFacture/facture-dachat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="-2.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../iconFacture/return.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="returnP2" layoutX="29.0" layoutY="269.0" mnemonicParsing="false" onAction="#returnP2" prefHeight="40.0" prefWidth="186.0" styleClass="add-btn" stylesheets="@fxmlvente.css" text="RETURN" textFill="#828282">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_Facture" layoutX="30.0" layoutY="144.0" mnemonicParsing="false" onAction="#btn_facture" prefHeight="40.0" prefWidth="185.0" styleClass="add-btn" stylesheets="@fxmlvente.css" text="votre Facture" textFill="#828282">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

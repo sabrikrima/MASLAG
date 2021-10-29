@@ -5,84 +5,48 @@
  */
 package Entité;
 
-import java.sql.Date;
+import javafx.scene.control.CheckBox;
 
 /**
  *
  * @author saidi
  */
-public class command {
-    private int Id_Com;
-    private int Id_User;
+public class Produit {
+    
     private int id_Produit;
-    private String Date_Com;
     private String Nom_Produit;
-     private String Marque_Produit;
+    private String Marque_Produit;
     private String Categorie_Produit;
     private Double Prix_Produit;
     private int quantite;
-
-    public command(int Id_Com, int Id_User, int id_Produit, String Date_Com, String Nom_Produit, String Marque_Produit, String Categorie_Produit, Double Prix_Produit, int quantite) {
-        this.Id_Com = Id_Com;
-        this.Id_User = Id_User;
-        this.id_Produit = id_Produit;
-        this.Date_Com = Date_Com;
-        this.Nom_Produit = Nom_Produit;
-        this.Marque_Produit = Marque_Produit;
-        this.Categorie_Produit = Categorie_Produit;
-        this.Prix_Produit = Prix_Produit;
-        this.quantite = quantite;
-    }
-
-    
-
-
-
-    public String getDate_Com() {
-        return Date_Com;
-    }
-
-    public void setDate_Com(String Date_Com) {
-        this.Date_Com = Date_Com;
-    }
-
-    @Override
-    public String toString() {
-        return "command{" + "Id_Com=" + Id_Com + ", Id_User=" + Id_User + ", id_Produit=" + id_Produit + ", Date_Com=" + Date_Com + ", Nom_Produit=" + Nom_Produit + ", Marque_Produit=" + Marque_Produit + ", Categorie_Produit=" + Categorie_Produit + ", Prix_Produit=" + Prix_Produit + ", quantite=" + quantite + '}';
-    }
-  
+   
    
 
- 
-    public command() {
-    }
-
-    public command(String Date_Com, String Nom_Produit, String Marque_Produit, String Categorie_Produit, Double Prix_Produit, int quantite) {
-        this.Date_Com = Date_Com;
+    public Produit(int id_Produit, String Nom_Produit, String Marque_Produit, String Categorie_Produit, Double Prix_Produit, int quantite) {
+        this.id_Produit = id_Produit;
         this.Nom_Produit = Nom_Produit;
         this.Marque_Produit = Marque_Produit;
         this.Categorie_Produit = Categorie_Produit;
         this.Prix_Produit = Prix_Produit;
         this.quantite = quantite;
     }
+  
 
+   
+
+  
+
+ 
     
     
-    public int getId_Com() {
-        return Id_Com;
-    }
 
-    public void setId_Com(int Id_Com) {
-        this.Id_Com = Id_Com;
-    }
+   
 
-    public int getId_User() {
-        return Id_User;
+   
+    
+     public Produit() {
     }
-
-    public void setId_User(int Id_User) {
-        this.Id_User = Id_User;
-    }
+    
 
     public int getId_Produit() {
         return id_Produit;
@@ -131,9 +95,18 @@ public class command {
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
-   
+
+    @Override
+    public String toString() {
+        return "Produit{" + "id_Produit=" + id_Produit + ", Nom_Produit=" + Nom_Produit + ", Marque_Produit=" + Marque_Produit + ", Categorie_Produit=" + Categorie_Produit + ", Prix_Produit=" + Prix_Produit + ", quantite=" + quantite + '}';
+    }
 
    
+    
+    
+
+    
+
   
     
 }

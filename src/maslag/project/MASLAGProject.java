@@ -25,6 +25,7 @@ public class MASLAGProject {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
      */
     public static void main(String[] args) throws SQLException {
         
@@ -39,13 +40,14 @@ public class MASLAGProject {
       
        
         CommandService Com = new CommandService();
-      //Com.AjouterCommand();
+    
+    // Com.AjouterCommand();
        
       
-       Com.Modifiercommand();
+    //  Com.Modifiercommand();
               
        // Com.AjouterCommand();
-      // Com.supprimercommand();
+       Com.supprimercommand();
         
         
           

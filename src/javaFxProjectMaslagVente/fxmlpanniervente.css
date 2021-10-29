@@ -1,0 +1,26 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#PaneVente{
+    -fx-background-color:#1E2329;
+}
+#Valider_Vente{
+    -fx-background-color:#f0b90b;
+}
+#Valider_Vente:hover{
+    -fx-border-color:#fdde4b;
+}
+#RetourVente{
+    -fx-background-color:#f0b90b;
+}
+#RetourVente:hover{
+    -fx-border-color:#fdde4b;
+}
+.supbtn{
+    -fx-background-color:#f0b90b;
+    
+}
